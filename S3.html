@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Amazon S3</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
+body{background:linear-gradient(-45deg,#081226,#0f1f3d,#12284d,#081226);color:#fff}
+header{position:sticky;top:0;background:rgba(0,0,0,.4);padding:15px 20px;color:#00d4ff;font-size:24px;font-weight:bold}
+.layout{display:flex}
+.sidebar{width:230px;min-height:100vh;background:rgba(255,255,255,.08);padding:20px}
+.sidebar a{display:block;color:#fff;text-decoration:none;padding:10px;border-radius:8px;background:rgba(255,255,255,.05);margin:8px 0}
+.sidebar a:hover{background:#00d4ff;color:#000}.content{flex:1;padding:30px}
+.card{background:rgba(255,255,255,.08);padding:20px;border-radius:15px;margin:15px 0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:15px}
+.stat{background:#19304f;padding:15px;border-radius:12px;text-align:center}
+button{padding:12px 22px;border:none;border-radius:20px;background:#00d4ff;color:#fff;cursor:pointer}
+
+/* टेबलसाठी नवीन डिझाईन */
+table{width:100%;border-collapse:collapse;margin-top:15px}
+th,td{padding:12px;text-align:center;border-bottom:1px solid rgba(255,255,255,.15)}
+th{color:#00d4ff}
+</style>
+</head>
+<body>
+
+<header>AI AWS Optimizer</header>
+
+<div class='layout'>
+<aside class="sidebar">
+
+<a href="Registration.html">🏠 Home</a>
+<a href="EC2.html">☁ EC2</a>
+<a href="S3.html">🗄 S3</a>
+<a href="Auto.html">⚡ Auto Scaling</a>
+<a href="Reserved.html">📦 Instances</a>
+<a href="Contact.html">📞 Contact</a>
+<a href="Lambda.html">λ Lambda</a>
+<a href="CloudWatch.html">📊 CloudWatch</a>
+<a href="RDS.html">🗃 RDS</a>
+<a href="Assistant.html">🤖 Assistant</a>
+
+</aside>
+
+<main class='content'>
+<h1>🗄 Amazon S3 Storage Intelligence Center</h1><br>
+
+<div class='stats'>
+<div class='stat'><h2>25</h2><p>Total Buckets</p></div>
+<div class='stat'><h2>4.8TB</h2><p>Storage Used</p></div>
+<div class='stat'><h2>$320</h2><p>Monthly Cost</p></div>
+<div class='stat'><h2>$95</h2><p>Savings</p></div>
+</div>
+
+<div class='card'>
+<h3>Bucket Monitoring</h3>
+<p>Track storage utilization across all S3 buckets.</p>
+</div>
+
+<div class='card'>
+<h3>Object Analytics</h3>
+<p>Analyze object count, size and access frequency.</p>
+</div>
+
+<div class='card'>
+<h3>Glacier Optimization</h3>
+<p>Move cold data to Glacier for lower costs.</p>
+</div>
+
+<div class='card'>
+<h3>S3 Bucket Status</h3>
+<table>
+<tr>
+<th>Bucket Name</th>
+<th>Storage</th>
+<th>Objects</th>
+<th>Monthly Cost</th>
+</tr>
+<tr>
+<td>project-backups</td>
+<td>1.5 TB</td>
+<td>120,000</td>
+<td>$95</td>
+</tr>
+<tr>
+<td>website-assets</td>
+<td>850 GB</td>
+<td>85,000</td>
+<td>$60</td>
+</tr>
+<tr>
+<td>logs-archive</td>
+<td>2.4 TB</td>
+<td>250,000</td>
+<td>$165</td>
+</tr>
+</table>
+</div>
+
+<div class='card'>
+<h3>AI Insight</h3>
+<p>Detected 1.8 TB of infrequently accessed data. Moving these files to Amazon S3 Glacier could save approximately $95 per month.</p>
+</div>
+
+<button onclick="alert('Scan Complete! Buckets:25 Savings:$95/month')">🚀 Scan Storage</button>
+<br><br>
+<a href='AWS.html' style='color:#00d4ff; text-decoration:none'>⬅ Back to Home</a>
+</main>
+</div>
+
+</body>
+</html>

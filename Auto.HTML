@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enable Auto Scaling</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
+body{background:linear-gradient(-45deg,#081226,#0f1f3d,#12284d,#081226);color:#fff}
+header{position:sticky;top:0;background:rgba(0,0,0,.4);padding:15px 20px;color:#00d4ff;font-size:24px;font-weight:bold}
+.layout{display:flex}
+.sidebar{width:230px;min-height:100vh;background:rgba(255,255,255,.08);padding:20px}
+.sidebar a{display:block;color:#fff;text-decoration:none;padding:10px;border-radius:8px;background:rgba(255,255,255,.05);margin:8px 0}
+.sidebar a:hover{background:#00d4ff;color:#000}
+
+/* मुख्य मजकुराचा भाग (Content Area) */
+.content{flex:1;padding:30px}
+.card{background:rgba(255,255,255,.08);padding:20px;border-radius:15px;margin:15px 0}
+button{padding:12px 22px;border:none;border-radius:20px;background:#00d4ff;color:#fff;font-weight:bold;cursor:pointer;transition:0.3s}
+button:hover{transform:scale(1.05)}
+
+.result{margin-top:20px;padding:20px;background:rgba(0,255,153,.15);border-radius:15px;display:none}
+
+/* आलेख (Graph) ची रचना */
+.graph{display:flex;justify-content:center;align-items:flex-end;gap:15px;height:250px;margin-top:25px}
+.bar{width:60px;background:linear-gradient(to top,#00d4ff,#00ff99);border-radius:10px 10px 0 0;animation:grow 2s infinite alternate}
+.b1{height:80px}.b2{height:120px}.b3{height:170px}.b4{height:220px}.b5{height:260px}
+
+@keyframes grow{
+from{transform:scaleY(.7)}
+to{transform:scaleY(1)}
+}
+</style>
+</head>
+<body>
+
+<header>AI AWS Optimizer</header>
+
+<div class='layout'>
+<!-- डाव्या बाजूचा मेनू बार -->
+<aside class="sidebar">
+
+<a href="Registration.html">🏠 Home</a>
+<a href="EC2.html">☁ EC2</a>
+<a href="S3.html">🗄 S3</a>
+<a href="Auto.html">⚡ Auto Scaling</a>
+<a href="Reserved.html">📦 Instances</a>
+<a href="Contact.html">📞 Contact</a>
+<a href="Lambda.html">λ Lambda</a>
+<a href="CloudWatch.html">📊 CloudWatch</a>
+<a href="RDS.html">🗃 RDS</a>
+<a href="Assistant.html">🤖 Assistant</a>
+
+</aside>
+
+<!-- उजव्या बाजूचा मुख्य भाग -->
+<main class='content'>
+<h1>⚡ Enable Auto Scaling</h1>
+<p style="color: #cbd5e0; margin-top: 5px;">Automatically scale AWS resources based on workload demand and reduce cloud costs.</p>
+<br>
+
+<div class="card">
+<h2>Auto Scaling Recommendation</h2>
+<p style="margin: 10px 0 20px 0;">
+AI detected fluctuating workload patterns. Enabling Auto Scaling can automatically
+increase resources during peak traffic and decrease them during low usage periods.
+</p>
+<button onclick="enableScaling()">
+🚀 Enable Auto Scaling
+</button>
+<div class="result" id="result"></div>
+</div>
+
+<div class="card">
+<h2>Expected Resource Utilization</h2>
+<div class="graph">
+<div class="bar b1"></div>
+<div class="bar b2"></div>
+<div class="bar b3"></div>
+<div class="bar b4"></div>
+<div class="bar b5"></div>
+</div>
+</div>
+
+<div class="card">
+<h2>Benefits</h2>
+<p style="margin: 8px 0;">✅ Reduces AWS costs</p>
+<p style="margin: 8px 0;">✅ Improves application performance</p>
+<p style="margin: 8px 0;">✅ Handles traffic spikes automatically</p>
+<p style="margin: 8px 0;">✅ Prevents over-provisioning</p>
+<p style="margin: 8px 0;">✅ Increases resource efficiency</p>
+</div>
+
+<br>
+<a href='AWS.html' style='color:#00d4ff; text-decoration:none'>⬅ Back to Home</a>
+</main>
+</div>
+
+<script>
+function enableScaling(){
+document.getElementById("result").style.display="block";
+document.getElementById("result").innerHTML=
+`
+<h3>✅ Auto Scaling Enabled</h3>
+<br>
+<p>Current Instances: 5</p>
+<p>Minimum Instances: 2</p>
+<p>Maximum Instances: 10</p>
+<p>Estimated Monthly Savings: $320</p>
+<p>Resource Efficiency Improved by 25%</p>
+`;
+}
+</script>
+
+</body>
+</html>

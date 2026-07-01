@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Cost Prediction</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
+body{background:linear-gradient(-45deg,#081226,#0f1f3d,#12284d,#081226);color:#fff}
+header{position:sticky;top:0;padding:15px;background:rgba(0,0,0,.4);color:#00d4ff;font-size:24px;font-weight:bold}
+.layout{display:flex}
+.sidebar{width:230px;min-height:100vh;background:rgba(255,255,255,.08);padding:20px}
+.nav{display:flex;flex-direction:column;gap:10px}
+.nav a{color:#fff;text-decoration:none;padding:10px;border-radius:8px;background:rgba(255,255,255,.05)}
+.nav a:hover{background:#00d4ff;color:#000}
+.content{flex:1;padding:40px}
+.container{max-width:900px;margin:auto;background:rgba(255,255,255,.08);padding:30px;border-radius:20px}
+input{width:100%;padding:12px;margin:10px 0;border-radius:8px;border:none}
+button{padding:12px 24px;border:none;border-radius:25px;background:linear-gradient(45deg,#00d4ff,#00ff99);color:#fff;font-weight:bold}
+.result{display:none;margin-top:20px;background:rgba(0,255,153,.15);padding:15px;border-radius:10px}
+</style></head>
+<body>
+<header>AI AWS Optimizer</header>
+<div class="layout">
+<aside class="sidebar"><nav class="nav">
+<a href="Registration.html">🏠 Home</a>
+<a href="Prediction.html">🤖 AI Cost Prediction</a>
+<a href="Monitoring.html">📊 Monitoring</a>
+<a href="Smart.html">⚡ Smart Alerts</a>
+<a href="Reports.html">📄 Reports</a>
+<a href="Analytics.html">📈 Analytics</a>
+<a href="Suggestions.html">💰 Suggestions</a>
+<a href="Contact.html">📞 Contact</a>
+<a href="Assistant.html">🤖 Assistant</a>
+</nav></aside>
+<main class="content"><div class="container">
+<h1>AI Cost Prediction</h1><br>
+<label>Current Monthly AWS Cost ($)</label>
+<input id="cost" type="number" placeholder="Enter monthly cost">
+<button onclick="predictCost()">Predict Cost</button>
+<div id="result" class="result"></div><br>
+<a href="AWS.html" style="color:#00d4ff">⬅ Back to Home</a>
+</div></main></div>
+<script>
+function predictCost(){
+let c=parseFloat(document.getElementById('cost').value);
+if(!c||c<=0){alert('Enter valid cost');return;}
+let p=(c*1.15).toFixed(2),s=(c*0.25).toFixed(2);
+let r=document.getElementById('result');
+r.style.display='block';
+r.innerHTML='<b>Current:</b> $'+c+'<br><b>Predicted:</b> $'+p+'<br><b>Savings:</b> $'+s;
+}
+</script></body></html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EC2</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
+
+body{
+  background:linear-gradient(-45deg,#081226,#0f1f3d,#12284d,#081226);
+  background-size:400% 400%;
+  animation:bgMove 12s ease infinite;
+  color:#fff;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+header{
+  position:sticky;top:0;
+  background:rgba(0,0,0,.4);
+  padding:15px 20px;
+  color:#00d4ff;
+  font-size:22px;
+  font-weight:bold;
+}
+
+.layout{display:flex}
+
+.sidebar{
+  width:230px;
+  min-height:100vh;
+  background:rgba(255,255,255,.08);
+  padding:20px;
+}
+
+.sidebar a{
+  display:block;
+  color:#fff;
+  text-decoration:none;
+  padding:10px;
+  border-radius:8px;
+  background:rgba(255,255,255,.05);
+  margin:8px 0;
+}
+
+.sidebar a:hover{
+  background:#00d4ff;
+  color:#000;
+}
+
+.content{flex:1;padding:30px}
+
+.card{
+  background:rgba(255,255,255,.08);
+  padding:20px;
+  border-radius:15px;
+  margin:15px 0;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+  gap:15px;
+}
+
+.stat{
+  background:#19304f;
+  padding:15px;
+  border-radius:12px;
+  text-align:center;
+}
+
+button{
+  padding:12px 22px;
+  border:none;
+  border-radius:20px;
+  background:#00d4ff;
+  color:#fff;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>☁ EC2</header>
+
+<div class="layout">
+
+<aside class="sidebar">
+
+<a href="Registration.html">🏠 Home</a>
+<a href="EC2.html">☁ EC2</a>
+<a href="S3.html">🗄 S3</a>
+<a href="Auto.html">⚡ Auto Scaling</a>
+<a href="Reserved.html">📦 Instances</a>
+<a href="Contact.html">📞 Contact</a>
+<a href="Lambda.html">λ Lambda</a>
+<a href="CloudWatch.html">📊 CloudWatch</a>
+<a href="RDS.html">🗃 RDS</a>
+<a href="Assistant.html">🤖 Assistant</a>
+
+</aside>
+
+<main class="content">
+
+<h1>☁ Amazon EC2 Intelligence Center</h1><br>
+
+<div class="stats">
+
+<div class="stat">
+<h2>12</h2>
+<p>🟢 Running</p>
+</div>
+
+<div class="stat">
+<h2>$850</h2>
+<p>💲 Monthly Cost</p>
+</div>
+
+<div class="stat">
+<h2>68%</h2>
+<p>⚙ CPU</p>
+</div>
+
+<div class="stat">
+<h2>$150</h2>
+<p>💰 Savings</p>
+</div>
+
+</div>
+
+<div class="card">
+<h3>📡 Instance Monitoring</h3>
+<p>Track running, stopped and idle EC2 instances.</p>
+</div>
+
+<div class="card">
+<h3>💰 Cost Optimization</h3>
+<p>Identify underutilized resources and reduce AWS spending.</p>
+</div>
+
+<div class="card">
+<h3>🤖 AI Insight</h3>
+<p>Three EC2 instances are underutilized. Enable Auto Scaling to save $150/month.</p>
+</div>
+
+<button onclick="alert('🚀 Scan Complete!\nRunning: 12\nIdle: 3\nSavings: $150/month')">
+🚀 Scan Infrastructure
+</button>
+
+<br><br>
+<a href="AWS.html" style="color:#00d4ff">⬅ Back to Home</a>
+
+</main>
+
+</div>
+
+</body>
+</html>

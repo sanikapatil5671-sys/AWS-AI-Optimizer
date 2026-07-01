@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI AWS Assistant - Working Pro</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:linear-gradient(-45deg,#081226,#0f1f3d,#12284d,#081226);
+background-size:400% 400%;
+animation:bgMove 10s ease infinite;
+color:white;
+min-height:100vh;
+overflow-x:hidden;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+header{
+position:sticky;
+top:0;
+background:rgba(0,0,0,.4);
+padding:15px 20px;
+font-size:24px;
+font-weight:bold;
+color:#00d4ff;
+backdrop-filter:blur(10px);
+z-index:1000;
+border-bottom: 1px solid rgba(255,255,255,.05);
+}
+
+.layout{
+display:flex;
+}
+
+/* Sidebar Menu */
+.sidebar{
+width:230px;
+background:rgba(255,255,255,.08);
+padding:20px;
+min-height:100vh;
+}
+
+.nav{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.nav a{
+text-decoration:none;
+color:white;
+padding:12px;
+border-radius:10px;
+background:rgba(255,255,255,.05);
+transition:.3s;
+font-size: 15px;
+}
+
+.nav a:hover, .nav a.active{
+background:#00d4ff;
+color:#000;
+font-weight: bold;
+}
+
+/* Content Area */
+.content{
+flex:1;
+padding:30px;
+}
+
+.container{
+width:100%;
+max-width:900px;
+margin: 0 auto;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+border-radius:25px;
+padding:30px;
+box-shadow:0 0 30px rgba(0,212,255,.3);
+}
+
+.header{
+text-align:center;
+margin-bottom:25px;
+}
+
+.header h1{
+font-size:40px;
+color:#00d4ff;
+}
+
+.header p{
+margin-top:10px;
+font-size:18px;
+color:#cbd5e0;
+}
+
+/* Chat History Box */
+.chat-box{
+height:350px;
+overflow-y:auto;
+background:rgba(255,255,255,.05);
+padding:20px;
+border-radius:15px;
+margin-bottom:20px;
+scroll-behavior: smooth;
+}
+
+.message{
+padding:12px 15px;
+margin:10px 0;
+border-radius:12px;
+max-width:80%;
+font-size: 15px;
+line-height: 1.4;
+}
+
+.bot{
+background:#19304f;
+color:white;
+border-left: 4px solid #00d4ff;
+}
+
+.user{
+background:linear-gradient(45deg,#00d4ff,#00ff99);
+color:black;
+margin-left:auto;
+font-weight: 500;
+}
+
+/* Suggestion Panel */
+.suggestions-panel{
+display: flex;
+gap: 10px;
+overflow-x: auto;
+padding-bottom: 10px;
+margin-bottom: 15px;
+}
+
+.suggestion-chip{
+background: rgba(255,255,255,.05);
+padding: 8px 16px;
+border-radius: 20px;
+font-size: 13px;
+cursor: pointer;
+white-space: nowrap;
+border: 1px solid rgba(255,255,255,.1);
+transition: 0.3s;
+}
+
+.suggestion-chip:hover{
+background: #00d4ff;
+color: #000;
+}
+
+/* Action Area */
+.input-area{
+display:flex;
+gap:10px;
+}
+
+input{
+flex:1;
+padding:15px;
+border:none;
+border-radius:12px;
+outline:none;
+font-size:16px;
+background: rgba(0,0,0,0.3);
+color: white;
+border: 1px solid rgba(255,255,255,0.1);
+}
+
+input:focus {
+border-color: #00d4ff;
+}
+
+button{
+padding:15px 25px;
+border:none;
+border-radius:12px;
+background:linear-gradient(45deg,#00d4ff,#00ff99);
+color:white;
+font-weight:bold;
+cursor:pointer;
+transition: 0.2s;
+}
+
+button:hover{
+transform:scale(1.05);
+color: black;
+}
+
+.back-btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+background:linear-gradient(45deg,#00d4ff,#00ff99);
+border-radius:30px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+}
+
+/* Typing Effect */
+.typing-indicator{
+display: none;
+align-items: center;
+gap: 5px;
+padding: 10px 15px;
+background: #19304f;
+border-radius: 12px;
+width: fit-content;
+margin: 10px 0;
+font-size: 14px;
+color: #a0aec0;
+}
+.dot {
+width: 6px;
+height: 6px;
+background: #00d4ff;
+border-radius: 50%;
+animation: flash 1.4s infinite linear;
+}
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes flash {
+0%, 100% { opacity: 0.2; }
+50% { opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">AI AWS Optimizer</div>
+</header>
+
+<div class="layout">
+  <!-- Left Side Navbar -->
+  <aside class="sidebar">
+    <nav class="nav">
+      <a href="AWS.html">🏠 Home</a>
+      <a href="Prediction.html">🤖 AI Cost Prediction</a>
+      <a href="Monitoring.html">📊 Real Time Monitoring</a>
+      <a href="Smart.html">⚡ Smart Alerts</a>
+      <a href="Reports.html">📄 Monthly Reports</a>
+      <a href="Analytics.html">📈 Resource Analytics</a>
+      <a href="Suggestions.html">💰 Cost Suggestions</a>
+      <a href="Contact.html">📞 Contact</a>
+      <a href="Assistant.html" class="active">🤖 Assistant</a>
+      <a href="Lambda.html">⚡ Lambda Center</a>
+      <a href="CloudWatch.html">📡 CloudWatch</a>
+      <a href="RDS.html">🗄 RDS Analytics</a>
+    </nav>
+  </aside>
+
+  <!-- Right Side Main Content -->
+  <main class="content">
+    <div class="container">
+      <div class="header">
+        <h1>🤖 AI AWS Assistant</h1>
+        <p>Your Smart AWS Cost Optimization Guide</p>
+      </div>
+
+      <!-- Chat Box Area -->
+      <div class="chat-box" id="chatBox">
+        <div class="message bot">
+          Hello! I am your AI AWS Assistant. Ask me about AWS cost optimization.
+        </div>
+      </div>
+
+      <!-- Thinking Indicator -->
+      <div class="typing-indicator" id="typingIndicator">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <span style="margin-left:5px;">AI Assistant is thinking...</span>
+      </div>
+
+      <!-- Suggestions Quick Panel -->
+      <div class="suggestions-panel">
+        <div class="suggestion-chip" onclick="quickAsk('EC2 optimization')">☁️ EC2 Cost</div>
+        <div class="suggestion-chip" onclick="quickAsk('S3 Glacier recommendations')">🗂 S3 Storage</div>
+        <div class="suggestion-chip" onclick="quickAsk('Lambda optimization')">⚡ Lambda performance</div>
+        <div class="suggestion-chip" onclick="quickAsk('RDS cost reduction')">🗄 RDS Database</div>
+      </div>
+
+      <!-- Text Inputs Box -->
+      <div class="input-area">
+        <input type="text" id="userInput" placeholder="Ask something (e.g., EC2, S3, Cost)..." onkeypress="if(event.key === 'Enter') sendMessage()">
+        <button onclick="sendMessage()">Send</button>
+      </div>
+
+      <a href="AWS.html" class="back-btn">⬅ Back To Home</a>
+    </div>
+  </main>
+</div>
+
+<script>
+// चिप्सवर क्लिक केल्यावर थेट सेंड होण्यासाठी फंक्शन
+function quickAsk(text) {
+    document.getElementById("userInput").value = text;
+    sendMessage();
+}
+
+function sendMessage(){
+    let input = document.getElementById("userInput");
+    let text = input.value.trim();
+
+    if(text === "") return;
+
+    let chat = document.getElementById("chatBox");
+
+    // युझरचा मेसेज चॅट बॉक्समध्ये टाकणे
+    chat.innerHTML += `<div class="message user">${text}</div>`;
+    chat.scrollTop = chat.scrollHeight;
+
+    input.value = "";
+
+    // डिफॉल्ट रिप्लाय
+    let reply = "I can help with AWS optimization. Please provide specific metrics.";
+    let query = text.toLowerCase();
+
+    if(query.includes("ec2")){
+        reply = "💡 Stop idle EC2 instances and use Auto Scaling to reduce costs.";
+    }
+    else if(query.includes("s3") || query.includes("glacier")){
+        reply = "💡 Move old files to S3 Glacier and remove unused storage.";
+    }
+    else if(query.includes("rds") || query.includes("database")){
+        reply = "💡 Use Reserved Instances and monitor database usage.";
+    }
+    else if(query.includes("lambda")){
+        reply = "💡 Optimize Lambda memory allocation and execution time.";
+    }
+    else if(query.includes("cloudwatch")){
+        reply = "💡 Configure alerts and remove unnecessary log retention.";
+    }
+    else if(query.includes("cost") || query.includes("saving")){
+        reply = "💰 Analyze spending trends and apply AI recommendations.";
+    }
+
+    // टाईपिंग इंडिकेटर दाखवणे
+    let indicator = document.getElementById("typingIndicator");
+    indicator.style.display = "flex";
+    chat.scrollTop = chat.scrollHeight;
+
+    // ०.८ सेकंदानंतर बोटचा रिप्लाय येणे
+    setTimeout(() => {
+        indicator.style.display = "none";
+        chat.innerHTML += `<div class="message bot">${reply}</div>`;
+        chat.scrollTop = chat.scrollHeight;
+    }, 800);
+}
+</script>
+
+</body>
+</html>

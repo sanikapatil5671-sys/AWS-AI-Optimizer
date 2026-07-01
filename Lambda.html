@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWS Lambda Intelligence Center</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
+body{background:linear-gradient(-45deg,#081226,#0f1f3d,#12284d,#081226);color:#fff}
+header{position:sticky;top:0;background:rgba(0,0,0,.4);padding:15px 20px;color:#00d4ff;font-size:24px;font-weight:bold}
+.layout{display:flex}
+.sidebar{width:230px;min-height:100vh;background:rgba(255,255,255,.08);padding:20px}
+.sidebar a{display:block;color:#fff;text-decoration:none;padding:10px;border-radius:8px;background:rgba(255,255,255,.05);margin:8px 0}
+.sidebar a:hover{background:#00d4ff;color:#000}
+
+/* मुख्य मजकुराचा भाग (Content Area) */
+.content{flex:1;padding:30px}
+.hero{text-align:center;padding:40px 20px}
+.hero h1{font-size:45px;font-weight:900;color:#00d4ff;margin-bottom:15px}
+.hero p{max-width:850px;margin:10px auto;font-size:18px;line-height:1.6;color:#cbd5e0}
+
+.hero-buttons{margin-top:20px;margin-bottom:30px}
+.scan-btn{padding:12px 28px;margin:8px;border:none;border-radius:25px;background:#00d4ff;color:#000;font-size:16px;font-weight:bold;cursor:pointer;transition:0.3s}
+.scan-btn:hover{transform:scale(1.05);background:#00ff99}
+
+.card{background:rgba(255,255,255,.08);padding:20px;border-radius:15px;margin:15px 0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:15px}
+.stat{background:#19304f;padding:15px;border-radius:12px;text-align:center}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;margin-top:30px}
+
+/* टेबल डिझाईन */
+table{width:100%;border-collapse:collapse;margin-top:15px}
+th,td{padding:12px;text-align:center;border-bottom:1px solid rgba(255,255,255,.15)}
+th{color:#00d4ff}
+
+/* ग्राफ डिझाईन */
+.graph{height:250px;display:flex;justify-content:center;align-items:flex-end;gap:15px;margin-top:25px}
+.bar{width:60px;background:linear-gradient(to top,#00d4ff,#00ff99);border-radius:10px 10px 0 0;animation:grow 2s infinite alternate}
+.b1{height:120px}.b2{height:220px}.b3{height:170px}.b4{height:280px}.b5{height:200px}
+
+@keyframes grow{
+from{transform:scaleY(.7)}
+to{transform:scaleY(1)}
+}
+</style>
+</head>
+<body>
+
+<header>AI AWS Optimizer</header>
+
+<div class='layout'>
+<!-- डाव्या बाजूचा मेनू बार -->
+<aside class="sidebar">
+
+<a href="Registration.html">🏠 Home</a>
+<a href="EC2.html">☁ EC2</a>
+<a href="S3.html">🗄 S3</a>
+<a href="Auto.html">⚡ Auto Scaling</a>
+<a href="Reserved.html">📦 Instances</a>
+<a href="Contact.html">📞 Contact</a>
+<a href="Lambda.html">λ Lambda</a>
+<a href="CloudWatch.html">📊 CloudWatch</a>
+<a href="RDS.html">🗃 RDS</a>
+<a href="Assistant.html">🤖 Assistant</a>
+
+</aside>
+
+<!-- उजव्या बाजूचा मुख्य भाग -->
+<main class='content'>
+<section class="hero">
+<h1>⚡ AWS Lambda Intelligence Center</h1>
+<p>
+Monitor serverless applications, analyze function performance,
+track invocations, reduce execution costs and receive
+AI-powered optimization recommendations.
+</p>
+
+<div class="hero-buttons">
+<button class="scan-btn" onclick="alert('Analysis Started!')">🚀 Analyze Functions</button>
+<button class="scan-btn" onclick="alert('Loading Report...')">📊 View Report</button>
+</div>
+
+<div class='stats'>
+<div class='stat'><h2>45</h2><p>Functions</p></div>
+<div class='stat'><h2>2.8M</h2><p>Invocations</p></div>
+<div class='stat'><h2>$180</h2><p>Monthly Cost</p></div>
+<div class='stat'><h2>$40</h2><p>Savings</p></div>
+</div>
+</section>
+
+<div class="grid">
+<div class="card">
+<h3>⚡ Function Monitoring</h3>
+<p>Monitor Lambda execution and performance metrics.</p>
+</div>
+<div class="card">
+<h3>📈 Invocation Analytics</h3>
+<p>Analyze requests, traffic spikes and trends.</p>
+</div>
+<div class="card">
+<h3>💰 Cost Optimization</h3>
+<p>Identify expensive functions and reduce spending.</p>
+</div>
+<div class="card">
+<h3>🤖 AI Recommendations</h3>
+<p>Get intelligent optimization suggestions.</p>
+</div>
+</div>
+
+<div class="card">
+<h3>Lambda Function Status</h3>
+<table>
+<tr>
+<th>Function</th>
+<th>Invocations</th>
+<th>Duration</th>
+<th>Monthly Cost</th>
+</tr>
+<tr>
+<td>UserAuth</td>
+<td>850,000</td>
+<td>120 ms</td>
+<td>$40</td>
+</tr>
+<tr>
+<td>ImageResize</td>
+<td>1,200,000</td>
+<td>280 ms</td>
+<td>$70</td>
+</tr>
+<tr>
+<td>EmailSender</td>
+<td>750,000</td>
+<td>90 ms</td>
+<td>$25</td>
+</tr>
+<tr>
+<td>DataProcessor</td>
+<td>500,000</td>
+<td>310 ms</td>
+<td>$45</td>
+</tr>
+</table>
+</div>
+
+<div class="card">
+<h3>📊 Lambda Analytics</h3>
+<div class="graph">
+<div class="bar b1"></div>
+<div class="bar b2"></div>
+<div class="bar b3"></div>
+<div class="bar b4"></div>
+<div class="bar b5"></div>
+</div>
+</div>
+
+<div class="card">
+<h3 style="color:#00ff99;">🤖 AI Optimization Engine</h3>
+<p style="margin-top: 10px;">
+AI detected excessive memory allocation in ImageResize
+functions. Optimizing memory and execution settings
+can save approximately $40 per month.
+</p>
+</div>
+
+<br>
+<a href='AWS.html' style='color:#00d4ff; text-decoration:none'>⬅ Back to Home</a>
+</main>
+</div>
+
+</body>
+</html>

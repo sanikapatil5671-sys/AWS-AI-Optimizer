@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - AI AWS Optimizer</title>
+<link href="https://googleapis.com" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:linear-gradient(-45deg,#081226,#0f1f3d,#12284d,#081226);
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+    position:relative;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.login-container{
+    width:420px;
+    padding:40px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:25px;
+    box-shadow:0 0 50px rgba(0,212,255,.25);
+    text-align:center;
+    position:relative;
+    z-index:10;
+}
+
+h2{
+    color:#00d4ff;
+    margin-bottom:10px;
+    font-size:28px;
+}
+
+.subtitle{
+    color:#ccc;
+    margin-bottom:25px;
+    font-size:14px;
+}
+
+.input-box{
+    margin-bottom:20px;
+    text-align:left;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    color:#cbd5e0;
+    font-size:14px;
+}
+
+input{
+    width:100%;
+    padding:15px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.15);
+    background:rgba(255,255,255,.05);
+    color:white;
+    outline:none;
+    font-size:15px;
+    transition:.4s;
+}
+
+input:focus{
+    border-color:#00d4ff;
+    box-shadow:0 0 20px #00d4ff;
+}
+
+.login-btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(45deg,#00d4ff,#00ff99);
+    font-size:16px;
+    font-weight:700;
+    color:white;
+    cursor:pointer;
+    transition:.4s;
+    margin-top:10px;
+}
+
+.login-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 0 30px #00d4ff;
+}
+
+.reg-link {
+    display: block;
+    margin-top: 20px;
+    color: #00d4ff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+.reg-link:hover {
+    color: #00ff99;
+    text-decoration: underline;
+}
+
+.aws-tag{
+    margin-top:20px;
+    color:#999;
+    font-size:13px;
+}
+</style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>🔑 Secure Login</h2>
+    <p class="subtitle">Enter your fixed credentials to access dashboard</p>
+    
+    <form onsubmit="validateLogin(event)">
+        <div class="input-box">
+            <label>AWS Email Address</label>
+            <input type="email" id="loginEmail" placeholder="Enter Email" required>
+        </div>
+        
+        <div class="input-box">
+            <label>Password</label>
+            <input type="password" id="loginPassword" placeholder="Enter Password" required>
+        </div>
+        
+        <button type="submit" class="login-btn">Verify & Login</button>
+    </form>
+    
+    <a href="Registration.html" class="reg-link">Don't have an account? Register here</a>
+    
+    <div class="aws-tag">
+        Powered By AI • AWS Cloud Analytics • 2026
+    </div>
+</div>
+
+<script>
+function validateLogin(e) {
+    e.preventDefault(); // फॉर्म रीलोड होण्यापासून थांबवणे
+
+    // येथे तुमचे निश्चित (Fixed) ईमेल आणि पासवर्ड सेट करा
+    const correctEmail = "admin@aws.com";
+    const correctPassword = "aws123";
+
+    // युझरने टाकलेली व्हॅल्यू मिळवणे
+    const enteredEmail = document.getElementById("loginEmail").value.trim();
+    const enteredPassword = document.getElementById("loginPassword").value;
+
+    const btn = document.querySelector(".login-btn");
+
+    // ईमेल आणि पासवर्ड तपासणे
+    if (enteredEmail === correctEmail && enteredPassword === correctPassword) {
+        btn.innerHTML = "🤖 Verifying Credentials...";
+        btn.disabled = true;
+
+        setTimeout(() => {
+            alert("✅ Login Successful!\nWelcome back to AWS AI Optimizer dashboard 🚀");
+            window.location.href = "welcome.html"; // मुख्य डॅशबोर्ड पेजवर जाणे
+        }, 1500);
+    } else {
+        alert("❌ Invalid Credentials!\nPlease enter correct Email and Password.");
+    }
+}
+</script>
+
+</body>
+</html>

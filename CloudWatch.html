@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon CloudWatch Intelligence Center</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
+body{background:linear-gradient(-45deg,#081226,#0f1f3d,#12284d,#081226);color:#fff}
+header{position:sticky;top:0;background:rgba(0,0,0,.4);padding:15px 20px;color:#00d4ff;font-size:24px;font-weight:bold}
+.layout{display:flex}
+.sidebar{width:230px;min-height:100vh;background:rgba(255,255,255,.08);padding:20px}
+.sidebar a{display:block;color:#fff;text-decoration:none;padding:10px;border-radius:8px;background:rgba(255,255,255,.05);margin:8px 0}
+.sidebar a:hover{background:#00d4ff;color:#000}
+
+/* मुख्य मजकुराचा भाग (Content Area) */
+.content{flex:1;padding:30px}
+.hero{text-align:center;padding:40px 20px}
+.hero h1{font-size:45px;font-weight:900;color:#00d4ff;margin-bottom:15px}
+.hero p{max-width:850px;margin:10px auto;font-size:18px;line-height:1.6;color:#cbd5e0}
+
+.scan-btn{padding:12px 28px;margin-top:20px;margin-bottom:30px;border:none;border-radius:25px;background:#00d4ff;color:#000;font-size:16px;font-weight:bold;cursor:pointer;transition:0.3s}
+.scan-btn:hover{transform:scale(1.05);background:#00ff99}
+
+.card{background:rgba(255,255,255,.08);padding:20px;border-radius:15px;margin:15px 0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:15px}
+.stat{background:#19304f;padding:15px;border-radius:12px;text-align:center}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;margin-top:30px}
+
+/* टेबल डिझाईन */
+table{width:100%;border-collapse:collapse;margin-top:15px}
+th,td{padding:12px;text-align:center;border-bottom:1px solid rgba(255,255,255,.15)}
+th{color:#00d4ff}
+
+/* ग्राफ डिझाईन */
+.graph{height:250px;display:flex;justify-content:center;align-items:flex-end;gap:15px;margin-top:25px}
+.bar{width:60px;background:linear-gradient(to top,#00d4ff,#00ff99);border-radius:10px 10px 0 0;animation:grow 2s infinite alternate}
+.b1{height:130px}.b2{height:240px}.b3{height:180px}.b4{height:290px}.b5{height:210px}
+
+@keyframes grow{
+from{transform:scaleY(.7)}
+to{transform:scaleY(1)}
+}
+</style>
+</head>
+<body>
+
+<header>AI AWS Optimizer</header>
+
+<div class='layout'>
+<!-- डाव्या बाजूचा मेनू बार -->
+<aside class="sidebar">
+
+<a href="Registration.html">🏠 Home</a>
+<a href="EC2.html">☁ EC2</a>
+<a href="S3.html">🗄 S3</a>
+<a href="Auto.html">⚡ Auto Scaling</a>
+<a href="Reserved.html">📦 Instances</a>
+<a href="Contact.html">📞 Contact</a>
+<a href="Lambda.html">λ Lambda</a>
+<a href="CloudWatch.html">📊 CloudWatch</a>
+<a href="RDS.html">🗃 RDS</a>
+<a href="Assistant.html">🤖 Assistant</a>
+
+</aside>
+
+<!-- उजव्या बाजूचा मुख्य भाग -->
+<main class='content'>
+<section class="hero">
+<h1>📡 Amazon CloudWatch Intelligence Center</h1>
+<p>
+Monitor AWS resources in real time, analyze metrics,
+track alarms, inspect logs and receive AI-powered
+performance and cost optimization recommendations.
+</p>
+
+<button class="scan-btn" onclick="alert('Scanning CloudWatch Metrics...')">📡 Scan Monitoring Data</button>
+
+<div class='stats'>
+<div class='stat'><h2>8</h2><p>Active Alarms</p></div>
+<div class='stat'><h2>1.2M</h2><p>Metrics Collected</p></div>
+<div class='stat'><h2>950K</h2><p>Log Events</p></div>
+<div class='stat'><h2>96%</h2><p>Monitoring Score</p></div>
+</div>
+</section>
+
+<div class="grid">
+<div class="card">
+<h3>📊 Metrics Monitoring</h3>
+<p>Track CPU, memory, disk and network metrics.</p>
+</div>
+<div class="card">
+<h3>🔔 Alarm Management</h3>
+<p>Receive alerts when thresholds are exceeded.</p>
+</div>
+<div class="card">
+<h3>📜 Log Analytics</h3>
+<p>Analyze application and infrastructure logs.</p>
+</div>
+<div class="card">
+<h3>🤖 AI Insights</h3>
+<p>Get recommendations based on monitoring data.</p>
+</div>
+</div>
+
+<div class="card">
+<h3>CloudWatch Resource Status</h3>
+<table>
+<tr>
+<th>Resource</th>
+<th>Status</th>
+<th>Metric</th>
+<th>Value</th>
+</tr>
+<tr>
+<td>EC2</td>
+<td>Healthy</td>
+<td>CPU Usage</td>
+<td>68%</td>
+</tr>
+<tr>
+<td>Lambda</td>
+<td>Healthy</td>
+<td>Duration</td>
+<td>120 ms</td>
+</tr>
+<tr>
+<td>RDS</td>
+<td style="color:#ff4d4d; font-weight:bold;">Warning</td>
+<td>CPU Usage</td>
+<td>82%</td>
+</tr>
+<tr>
+<td>S3</td>
+<td>Healthy</td>
+<td>Requests</td>
+<td>15K</td>
+</tr>
+</table>
+</div>
+
+<div class="card">
+<h3>📈 Monitoring Analytics</h3>
+<div class="graph">
+<div class="bar b1"></div>
+<div class="bar b2"></div>
+<div class="bar b3"></div>
+<div class="bar b4"></div>
+<div class="bar b5"></div>
+</div>
+</div>
+
+<div class="card">
+<h3 style="color:#00ff99;">🤖 AI Monitoring Insight</h3>
+<p style="margin-top: 10px;">
+CloudWatch detected unusually high CPU utilization on one RDS instance.
+Consider scaling resources or optimizing database queries.
+Estimated performance improvement: 25%.
+</p>
+</div>
+
+<br>
+<a href='AWS.html' style='color:#00d4ff; text-decoration:none'>⬅ Back to Home</a>
+</main>
+</div>
+
+</body>
+</html>

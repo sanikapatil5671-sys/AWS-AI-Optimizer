@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon RDS Intelligence Center</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
+body{background:linear-gradient(-45deg,#081226,#0f1f3d,#12284d,#081226);color:#fff}
+header{position:sticky;top:0;background:rgba(0,0,0,.4);padding:15px 20px;color:#00d4ff;font-size:24px;font-weight:bold}
+.layout{display:flex}
+.sidebar{width:230px;min-height:100vh;background:rgba(255,255,255,.08);padding:20px}
+.sidebar a{display:block;color:#fff;text-decoration:none;padding:10px;border-radius:8px;background:rgba(255,255,255,.05);margin:8px 0}
+.sidebar a:hover{background:#00d4ff;color:#000}
+
+/* मुख्य मजकुराचा भाग (Content Area) */
+.content{flex:1;padding:30px}
+.hero{text-align:center;padding:40px 20px}
+.hero h1{font-size:45px;font-weight:900;color:#00d4ff;margin-bottom:15px}
+.hero p{max-width:850px;margin:10px auto;font-size:18px;line-height:1.6;color:#cbd5e0}
+
+.scan-btn{padding:12px 28px;margin-top:20px;margin-bottom:30px;border:none;border-radius:25px;background:#00d4ff;color:#000;font-size:16px;font-weight:bold;cursor:pointer;transition:0.3s}
+.scan-btn:hover{transform:scale(1.05);background:#00ff99}
+
+.card{background:rgba(255,255,255,.08);padding:20px;border-radius:15px;margin:15px 0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:15px}
+.stat{background:#19304f;padding:15px;border-radius:12px;text-align:center}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;margin-top:30px}
+
+/* टेबल डिझाईन */
+table{width:100%;border-collapse:collapse;margin-top:15px}
+th,td{padding:12px;text-align:center;border-bottom:1px solid rgba(255,255,255,.15)}
+th{color:#00d4ff}
+</style>
+</head>
+<body>
+
+<header>AI AWS Optimizer</header>
+
+<div class='layout'>
+<!-- डाव्या बाजूचा मेनू बार -->
+<aside class="sidebar">
+
+<a href="Registration.html">🏠 Home</a>
+<a href="EC2.html">☁ EC2</a>
+<a href="S3.html">🗄 S3</a>
+<a href="Auto.html">⚡ Auto Scaling</a>
+<a href="Reserved.html">📦 Instances</a>
+<a href="Contact.html">📞 Contact</a>
+<a href="Lambda.html">λ Lambda</a>
+<a href="CloudWatch.html">📊 CloudWatch</a>
+<a href="RDS.html">🗃 RDS</a>
+<a href="Assistant.html">🤖 Assistant</a>
+
+</aside>
+
+<!-- उजव्या बाजूचा मुख्य भाग -->
+<main class='content'>
+<section class="hero">
+<h1>🗄 Amazon RDS Intelligence Center</h1>
+<p>
+Monitor database performance, analyze storage usage,
+track queries, optimize costs and receive AI-powered
+recommendations for Amazon RDS.
+</p>
+
+<button class="scan-btn" onclick="alert('Analyzing Databases...')">🗄 Analyze Databases</button>
+
+<div class='stats'>
+<div class='stat'><h2>12</h2><p>Databases</p></div>
+<div class='stat'><h2>2.5 TB</h2><p>Storage Used</p></div>
+<div class='stat'><h2>$620</h2><p>Monthly Cost</p></div>
+<div class='stat'><h2>$140</h2><p>Savings</p></div>
+</div>
+</section>
+
+<div class="grid">
+<div class="card">
+<h3>📊 Performance Monitoring</h3>
+<p>Monitor CPU, memory and database performance.</p>
+</div>
+<div class="card">
+<h3>💾 Storage Analytics</h3>
+<p>Track storage growth and utilization.</p>
+</div>
+<div class="card">
+<h3>⚡ Query Optimization</h3>
+<p>Identify slow queries and bottlenecks.</p>
+</div>
+<div class="card">
+<h3>🤖 AI Recommendations</h3>
+<p>Receive intelligent database optimization tips.</p>
+</div>
+</div>
+
+<div class="card">
+<h3>RDS Database Status</h3>
+<table>
+<tr>
+<th>Database</th>
+<th>Status</th>
+<th>CPU</th>
+<th>Monthly Cost</th>
+</tr>
+<tr>
+<td>CustomerDB</td>
+<td>Healthy</td>
+<td>62%</td>
+<td>$180</td>
+</tr>
+<tr>
+<td>SalesDB</td>
+<td>Healthy</td>
+<td>55%</td>
+<td>$140</td>
+</tr>
+<tr>
+<td>AnalyticsDB</td>
+<td style="color:#ff4d4d; font-weight:bold;">Warning</td>
+<td>88%</td>
+<td>$210</td>
+</tr>
+<tr>
+<td>BackupDB</td>
+<td>Healthy</td>
+<td>25%</td>
+<td>$90</td>
+</tr>
+</table>
+</div>
+
+<div class="card">
+<h3 style="color:#00ff99;">🤖 AI Database Insight</h3>
+<p style="margin-top: 10px;">
+AnalyticsDB is experiencing high CPU utilization.
+Optimizing queries and enabling read replicas could
+improve performance and reduce costs by approximately $140 per month.
+</p>
+</div>
+
+<br>
+<a href='AWS.html' style='color:#00d4ff; text-decoration:none'>⬅ Back to Home</a>
+</main>
+</div>
+
+</body>
+</html>
